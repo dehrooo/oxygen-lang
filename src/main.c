@@ -1,7 +1,8 @@
 /*
   This file contains the entry point for the Oxygen Interpreter.
 
-  Its a basic shell for the backend of the language with helpful commands and basic argument processing.
+  Its a basic shell for the backend of the language with helpful commands and
+  basic argument processing.
 */
 
 #include <stdio.h>
@@ -14,7 +15,7 @@ int main(int argc, char *argv[]) {
   }
 
   FILE *file = fopen(argv[1], "r");
-  
+
   if (file == NULL) {
     perror("Error opening file");
     return 1;
@@ -28,7 +29,7 @@ int main(int argc, char *argv[]) {
   fclose(file);
 
   contents[fsize] = 0;
-  
+
   printf("%s", contents);
 
   free(contents);
