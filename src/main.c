@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "../lib/oxx.h"
 
 int main(int argc, char *argv[]) {
   if (argc != 2) {
@@ -30,8 +31,11 @@ int main(int argc, char *argv[]) {
 
   contents[fsize] = 0;
 
-  printf("%s", contents);
+  UT_array* lexed = OxxScanTokens(contents);
+
+  printf("\n%s\n\n%s\n\n", contents, *lexed);
 
   free(contents);
+  contents = NULL;
   return 0;
 }
